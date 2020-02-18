@@ -1,8 +1,33 @@
 .product__wrapper {
-  width: 400px;
+  width: 325px;
   height: 200px;
   padding: 0 20px;
   border: 1px solid #818181;
-  border-radius: 10px;
+  border-radius: 20px;
+  background-color: #dfdfdf;
+}
+
+.description__area {
+  width: 90%;
+  height: 100px;
   overflow: scroll;
+}
+
+.product__name {
+  text-transform: uppercase;
+  margin-left: 8px;
+  font-weight: bold;
+  color: #0f13f1;
+}
+
+.product__price {
+  font-weight: bold;
+  color: #158011;
+}
+
+.product__description {
+  text-transform: capitalize;
+  margin-left: 8px;
+  font-weight: bold;
+  color: #120964;
 }

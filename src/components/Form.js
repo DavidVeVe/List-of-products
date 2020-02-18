@@ -4,7 +4,7 @@ import "../styles/form.css";
 
 function Form(props) {
   return (
-    <form className="form__wrapper">
+    <form className="form__wrapper" onSubmit={props.onSubmit}>
       <input
         value={props.formValues.name}
         onChange={props.onChange}
@@ -25,7 +25,7 @@ function Form(props) {
         name="description"
         id=""
         cols="30"
-        rows="10"
+        rows="4"
         placeholder="Description"
       ></textarea>
       <button onClick={props.handleClick}>Add</button>

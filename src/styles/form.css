@@ -1,8 +1,17 @@
 .form__wrapper {
-  height: 300px;
-  margin: 50px;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 50px;
   display: flex;
+  padding: 15px;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: column;
+  border: 1px solid #adadad;
+  border-radius: 20px;
+  background-color: #dfdfdf;
+}
+
+.form__wrapper > * {
+  outline: none;
 }

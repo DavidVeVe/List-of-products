@@ -2,7 +2,9 @@ import React from "react";
 
 import Form from "./components/Form";
 import Product from "./components/Product";
-import api from "./api";
+
+import "./styles/global.css";
+// import api from "./api";
 
 class App extends React.Component {
   state = {
@@ -13,12 +15,14 @@ class App extends React.Component {
     }
   };
 
-  handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      await api.products.create(this.state.form);
-    } catch (error) {}
-  };
+  // handleSubmit = async e => {
+  //   e.preventDefault();
+  //   try {
+  //     await api.products.create(this.state.form);
+  //   } catch (error) {
+  //     this.setState({});
+  //   }
+  // };
 
   handleChange = e => {
     this.setState({
