@@ -1,0 +1,8 @@
+.form__wrapper {
+  height: 300px;
+  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}

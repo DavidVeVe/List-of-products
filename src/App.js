@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Form from "./components/Form";
+import Product from "./components/Product";
+import api from "./api";
+
+class App extends React.Component {
+  state = {
+    form: {
+      name: "",
+      price: "",
+      description: ""
+    }
+  };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      await api.products.create(this.state.form);
+    } catch (error) {}
+  };
+
+  handleChange = e => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <Form
+          onChange={this.handleChange}
+          formValues={this.state.form}
+          onSubmit={this.handleSubmit}
+        />
+        <Product
+          productName={this.state.form.name}
+          productPrice={this.state.form.price}
+          productDescription={this.state.form.description}
+        />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
